@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background: #858585;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+.loading{
+    float: left;
+width: 40%;
+height: 18px;
+background-color: white;
+border-radius: 25px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+position: relative;
+top: 50px;
+left: 21%;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+position: relative;
+    background-color: black;
+    width: 250px;
+    height:737px;
+    left: 49.98%;
+    margin: 0px;
+
+}
+.user img{
+    position: relative;
+    width: 100px;
+    height: 90px;
+    border-radius: 50% ;
+    top: 15px;
+ 
+   
+
+}
+.user .button {
+    position: relative;
+    top:76%;
+}
+.user .button input{
+    width: 180px;
+    height: 37px;
+}
+.exam-container{
+    width: 50%;
+    background-color: rgb(222, 222, 222);
+    height: 400px;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+top: 180px;
+right: 550px;
+border: 3px solid black;
+border-radius: 10px;
+box-shadow: 10px 10px 10px rgba(34, 6, 6, 0.2);
+
+}
+.question{
+    position: relative;
+    width: 525px;
+    height: 85px;
+    background-color: #858585; ;
+    text-align: center;
+    border-radius: 20px;
+    top: 25px;
+    padding: 18px;
+    left: 30%;
+}
+.answers{
+    display: flex;
+    position: relative;
+    top: 50px;
+justify-content: center;
+
+}
+.answer-A button, .answer-B button, .answer-C button,.answer-D button{
+    width: 300px;
+    height: 55px;
+    background-color: aliceblue;
+    margin-right: 20px;
+    border: 2px solid black;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+cursor: pointer;
+font-size: medium;
+
+
+}
+.answerBtn:hover{
+    background-color: rgb(212, 212, 212);
+   
+}
+.answer-A, .answer-B  {
+    position: relative;
+    left: 27%;
+}
+.answer-C, .answer-D  {
+    position: relative;
+    right: 23%;
+    top:80px;
+}
+
+.previous-btn{
+    position: relative;
+    top: 170px;
+    right: 210px;
+    }
+.next-btn{
+        position: relative;
+        top: 140px;    
+        left: 210px;
+       
+    } 
+.next-btn,.previous-btn{
+ width: 110px;
+ height: 30px;  
+ 
+}
+.user .button input , .next-btn,.previous-btn{
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+}
+.user .timer{
+    width: 100px;
+    height: 50px;
+    background-color: aliceblue;
+    position: relative;
+}
+
+
+/* .exam-container i {
+    color: black;
+    position: relative;
+    left: 300px;
+    top: 75px;
+
+}
+.exam-container i:hover{
+    color:red;
+} */
+/* #timer{
+    width:100px ;
+    height: 100px;
+    background-color: black;
+    color: white;
+    
+} */
+
+
+
+

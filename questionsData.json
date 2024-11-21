@@ -1,0 +1,305 @@
+  {
+    "questions": [
+      {
+        "question": "What is the capital of France?",
+        "options": {
+          "A": "Berlin",
+          "B": "Madrid",
+          "C": "Paris",
+          "D": "Rome"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which planet is known as the Red Planet?",
+        "options": {
+          "A": "Earth",
+          "B": "Mars",
+          "C": "Jupiter",
+          "D": "Saturn"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Who wrote 'To Kill a Mockingbird'?",
+        "options": {
+          "A": "Harper Lee",
+          "B": "Mark Twain",
+          "C": "J.K. Rowling",
+          "D": "George Orwell"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "What is the largest ocean on Earth?",
+        "options": {
+          "A": "Indian Ocean",
+          "B": "Atlantic Ocean",
+          "C": "Pacific Ocean",
+          "D": "Arctic Ocean"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which element has the chemical symbol 'O'?",
+        "options": {
+          "A": "Oxygen",
+          "B": "Gold",
+          "C": "Silver",
+          "D": "Iron"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "In which year did the Titanic sink?",
+        "options": {
+          "A": "1905",
+          "B": "1912",
+          "C": "1920",
+          "D": "1935"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is the hardest natural substance on Earth?",
+        "options": {
+          "A": "Gold",
+          "B": "Iron",
+          "C": "Diamond",
+          "D": "Platinum"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Who painted the Mona Lisa?",
+        "options": {
+          "A": "Vincent van Gogh",
+          "B": "Leonardo da Vinci",
+          "C": "Pablo Picasso",
+          "D": "Claude Monet"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which gas do plants absorb from the atmosphere?",
+        "options": {
+          "A": "Oxygen",
+          "B": "Carbon Dioxide",
+          "C": "Nitrogen",
+          "D": "Helium"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is the largest continent by land area?",
+        "options": {
+          "A": "Africa",
+          "B": "Europe",
+          "C": "Asia",
+          "D": "Australia"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Who discovered penicillin?",
+        "options": {
+          "A": "Alexander Fleming",
+          "B": "Marie Curie",
+          "C": "Louis Pasteur",
+          "D": "Isaac Newton"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which country hosted the 2016 Summer Olympics?",
+        "options": {
+          "A": "China",
+          "B": "Brazil",
+          "C": "Japan",
+          "D": "Germany"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is the currency of Japan?",
+        "options": {
+          "A": "Yuan",
+          "B": "Won",
+          "C": "Yen",
+          "D": "Dollar"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "How many bones are there in the human body?",
+        "options": {
+          "A": "206",
+          "B": "210",
+          "C": "212",
+          "D": "205"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which of the following is a prime number?",
+        "options": {
+          "A": "4",
+          "B": "9",
+          "C": "7",
+          "D": "10"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Who was the first man to walk on the moon?",
+        "options": {
+          "A": "Neil Armstrong",
+          "B": "Buzz Aldrin",
+          "C": "Michael Collins",
+          "D": "Yuri Gagarin"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "What is the chemical symbol for water?",
+        "options": {
+          "A": "O2",
+          "B": "CO2",
+          "C": "H2O",
+          "D": "NaCl"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "In which country can you visit the Great Pyramids of Giza?",
+        "options": {
+          "A": "India",
+          "B": "Egypt",
+          "C": "Mexico",
+          "D": "China"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which instrument is used to measure temperature?",
+        "options": {
+          "A": "Barometer",
+          "B": "Thermometer",
+          "C": "Hygrometer",
+          "D": "Anemometer"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which ocean is located between Africa and Australia?",
+        "options": {
+          "A": "Pacific Ocean",
+          "B": "Atlantic Ocean",
+          "C": "Indian Ocean",
+          "D": "Arctic Ocean"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is the smallest planet in our solar system?",
+        "options": {
+          "A": "Mercury",
+          "B": "Venus",
+          "C": "Earth",
+          "D": "Mars"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which organ is responsible for pumping blood through the body?",
+        "options": {
+          "A": "Lungs",
+          "B": "Kidneys",
+          "C": "Heart",
+          "D": "Liver"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "What is the tallest mountain in the world?",
+        "options": {
+          "A": "K2",
+          "B": "Kangchenjunga",
+          "C": "Mount Everest",
+          "D": "Makalu"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Who was the first President of the United States?",
+        "options": {
+          "A": "Abraham Lincoln",
+          "B": "George Washington",
+          "C": "Thomas Jefferson",
+          "D": "John Adams"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "What is the chemical symbol for gold?",
+        "options": {
+          "A": "Au",
+          "B": "Ag",
+          "C": "Fe",
+          "D": "Pb"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which desert is the largest in the world?",
+        "options": {
+          "A": "Sahara Desert",
+          "B": "Gobi Desert",
+          "C": "Arabian Desert",
+          "D": "Kalahari Desert"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which language is the most spoken worldwide?",
+        "options": {
+          "A": "English",
+          "B": "Spanish",
+          "C": "Mandarin Chinese",
+          "D": "Hindi"
+        },
+        "correctAnswer": "C"
+      },
+      {
+        "question": "Which of the following animals is a mammal?",
+        "options": {
+          "A": "Shark",
+          "B": "Dolphin",
+          "C": "Crocodile",
+          "D": "Turtle"
+        },
+        "correctAnswer": "B"
+      },
+      {
+        "question": "Which is the longest river in the world?",
+        "options": {
+          "A": "Nile",
+          "B": "Amazon",
+          "C": "Yangtze",
+          "D": "Mississippi"
+        },
+        "correctAnswer": "A"
+      },
+      {
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "options": {
+          "A": "China",
+          "B": "South Korea",
+          "C": "Japan",
+          "D": "Vietnam"
+        },
+        "correctAnswer": "C"
+      }
+    ]
+  }
+  
