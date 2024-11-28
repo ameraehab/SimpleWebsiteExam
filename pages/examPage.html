@@ -7,6 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Exam Page</title>
 		<link rel="stylesheet" href="/style/examStyle.css" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			rel="stylesheet" />
 	</head>
 	<body>
 		<div class="loading"></div>
@@ -18,12 +21,17 @@
 			</div>
 		</div>
 		<div class="exam-container">
+			<div class="flag">
+				<i class="fa-solid fa-flag" style="color: red"></i>
+			</div>
 			<div class="exam-contant"></div>
-			<button class="previous-btn">Previous</button>
-			<button class="next-btn">Next</button>
+			<div class="btn-nxt-and-prev-container">
+				<button class="previous-btn">Previous</button>
+				<button class="next-btn">Next</button>
+			</div>
 		</div>
 
-		<script type="module" src="/script/api.js"></script>
+		<script type="module" src="/script/examPage.js"></script>
 		<script type="module" src="/script/navigateToPage.js"></script>
 	</body>
 </html>

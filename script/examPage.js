@@ -15,6 +15,8 @@ class exam {
         this.fetchData();
         this.userSide = document.querySelector(".user");
 
+        // this.flagBtn = document.querySelector(".flag");
+
     }
     async fetchData() {
         try {
@@ -40,20 +42,30 @@ class exam {
     async displayExamQuestions() {
         const question = this.questionsData[this.index];
         this.examContant.innerHTML = "";
-        const div = document.createElement("div")
-
+        const div = document.createElement("div");
+        // this.userSide.appendChild(this.questionFlagDiv);
         div.innerHTML = `
-        <div class="question"> 
+                <div class="question"> 
                     <h4>Question ${this.index + 1} :</h4>
-                    <h3> ${question.question}</h3></div>
-            <div class="answers">     
-                <div class="answer-A"><button  id="btn-ans-1" class="answerBtn">${question.options.A}</button>  </div>
+                    <h3> ${question.question}</h3>
+                </div>
+                <div class="answers">     
+                    <div class="answer-A"><button  id="btn-ans-1" class="answerBtn">${question.options.A}</button>  </div>
                     <div class="answer-B"> <button id="btn-ans-2" class="answerBtn">${question.options.B}</button>  </div>
                     <div class="answer-C"><button id="btn-ans-3" class="answerBtn">${question.options.C}</button>  </div>
                     <div class="answer-D"> <button id="btn-ans-4" class="answerBtn">${question.options.D}</button>    </div>
-                    </div> 
+                </div> 
                 `;
 
+        // this.flagBtn.addEventListener("click", () => {
+
+        //     if (this.questionFlagDiv.style.cssText = "none") {
+        //         this.questionFlagDiv.style.cssText = "background-Color:#858585 ;width: 100px;height: 30px;border: none;color: white;font-size: medium;font-weight: bold;border-radius: 8px;cursor: pointer;box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); display: flex;align-items: center;justify-content: center; margin-Bottom:20px; "
+        //         this.questionFlagDiv.innerHTML = `<p>Question ${this.index + 1}</p>`;
+        //     }
+        //     if ()
+
+        // });
         this.examContant.appendChild(div);
         if (this.index == 0) {
             this.prevBtn.style.display = "none";
@@ -62,7 +74,7 @@ class exam {
             this.nextBtn.style.display = "none";
 
         }
-        
+
         this.checkCorrectAnswer(question);
         this.p.textContent = `${this.loading} %`;
         this.load.appendChild(this.p);
@@ -70,15 +82,12 @@ class exam {
 
     }
 
-    
-
     checkCorrectAnswer(question) {
         const btnA = document.getElementById("btn-ans-1");
         const btnB = document.getElementById("btn-ans-2");
         const btnC = document.getElementById("btn-ans-3");
         const btnD = document.getElementById("btn-ans-4");
         const a = Object.keys(question.options);
-
 
         btnA.addEventListener("click", () => {
             this.updateButtonStyles(btnA, [btnB, btnC, btnD]);
@@ -89,9 +98,6 @@ class exam {
             this.updateButtonStyles(btnB, [btnA, btnC, btnD]);
             this.handleAnswer(a[1], question.correctAnswer);
             this.updateLoadingStyles();
-
-
-
         });
         btnC.addEventListener("click", () => {
             this.updateButtonStyles(btnC, [btnA, btnB, btnD]);
@@ -199,23 +205,24 @@ class exam {
 
     }
 
+
     nextButton() {
 
         this.nextBtn.addEventListener("click", () => {
-            this.prevBtn.style.cssText = 'display:block;position:relative;top: 170px;right: 210px;';
+            this.prevBtn.style.cssText = 'display:block;';
 
             this.index++;
 
             if (this.index < this.questionsData.length) {
 
 
-                this.prevBtn.style.cssText = 'display:block;position:relative;top: 170px;right: 210px;';
+                this.prevBtn.style.cssText = 'display:block;';
                 this.displayExamQuestions();
 
 
             } else {
-                this.nextBtn.style.cssText = 'display :none; position: relative;top: 170px; left: 210px;';
-                this.prevBtn.style.cssText = 'display:block;position:relative;top: 170px;right: 210px;';
+                this.nextBtn.style.cssText = 'display :none; ';
+                this.prevBtn.style.cssText = 'display:block;';
 
             }
             this.restoreButtonStyles();
@@ -228,18 +235,18 @@ class exam {
 
         this.prevBtn.addEventListener("click", () => {
 
-            this.nextBtn.style.cssText = 'display :block; position: relative;top: 170px; left: 210px;';
+            this.nextBtn.style.cssText = 'display :block; ';
 
             if (this.index > 0) {
 
                 this.index--;
-                this.nextBtn.style.cssText = "display :block; position: relative;top: 170px; left: 210px;";
+                this.nextBtn.style.cssText = "display :block; ";
                 this.displayExamQuestions();
 
             } else {
-                this.nextBtn.style.cssText = 'display :block; position: relative;top: 170px; left: 210px;';
+                this.nextBtn.style.cssText = 'display :block; ';
 
-                this.prevBtn.style.cssText = 'display:none;position:relative;top: 170px;right: 210px;';
+                this.prevBtn.style.cssText = 'display:none;';
 
             }
             this.restoreButtonStyles();
