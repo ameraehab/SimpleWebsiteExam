@@ -1,6 +1,7 @@
 class exam {
     constructor() {
         this.questionsData = [];
+        this.flagQuestionArr = [];
         this.examContant = document.querySelector(".exam-contant");
         this.nextBtn = document.querySelector(".next-btn");
         this.prevBtn = document.querySelector(".previous-btn");
@@ -14,8 +15,7 @@ class exam {
         this.load.appendChild(this.loadDiv);
         this.fetchData();
         this.userSide = document.querySelector(".user");
-
-        // this.flagBtn = document.querySelector(".flag");
+        this.flagBtn = document.querySelector(".flag");
 
     }
     async fetchData() {
@@ -43,7 +43,7 @@ class exam {
         const question = this.questionsData[this.index];
         this.examContant.innerHTML = "";
         const div = document.createElement("div");
-        // this.userSide.appendChild(this.questionFlagDiv);
+
         div.innerHTML = `
                 <div class="question"> 
                     <h4>Question ${this.index + 1} :</h4>
@@ -57,15 +57,8 @@ class exam {
                 </div> 
                 `;
 
-        // this.flagBtn.addEventListener("click", () => {
+        this.flagQuestion();
 
-        //     if (this.questionFlagDiv.style.cssText = "none") {
-        //         this.questionFlagDiv.style.cssText = "background-Color:#858585 ;width: 100px;height: 30px;border: none;color: white;font-size: medium;font-weight: bold;border-radius: 8px;cursor: pointer;box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); display: flex;align-items: center;justify-content: center; margin-Bottom:20px; "
-        //         this.questionFlagDiv.innerHTML = `<p>Question ${this.index + 1}</p>`;
-        //     }
-        //     if ()
-
-        // });
         this.examContant.appendChild(div);
         if (this.index == 0) {
             this.prevBtn.style.display = "none";
@@ -74,12 +67,62 @@ class exam {
             this.nextBtn.style.display = "none";
 
         }
-
         this.checkCorrectAnswer(question);
         this.p.textContent = `${this.loading} %`;
         this.load.appendChild(this.p);
         this.p.style.cssText = "font-Weight:50px;position: fixed;font-Size:small; padding:3px  ";
 
+    }
+    // flagQuestion() {
+
+    //     this.flagBtn.addEventListener("click", () => {
+
+    //         this.questionFlagDiv.style.cssText = "background-Color:#858585 ;width: 100px;height: 30px;border: none;color: white;font-size: medium;font-weight: bold;border-radius: 8px;cursor: pointer;box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); display: flex;align-items: center;justify-content: center; margin-Bottom:20px; "
+    //         this.questionFlagDiv.innerHTML = `<p>Question ${this.index + 1}</p>`;
+    //         this.userSide.appendChild(this.questionFlagDiv);
+
+    //     });
+
+    // }
+    flagQuestion() {
+        this.questionFlagDiv = document.createElement("div");
+
+        this.flagBtn.addEventListener("click", () => {
+            // Check if the current question is already flagged
+            const questionIndex = this.index;
+            const isFlagged = this.flagQuestionArr.includes(questionIndex);
+
+            if (!isFlagged) {
+                // Flag the question
+                this.flagQuestionArr.push(questionIndex);
+
+                // Add visual cue for the flag
+                this.questionFlagDiv.style.cssText = `
+                    background-color: #858585;
+                    width: 100px;
+                    height: 30px;
+                    border: none;
+                    color: white;
+                    font-size: medium;
+                    font-weight: bold;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                `;
+                this.questionFlagDiv.innerHTML = `<p>Question ${questionIndex + 1} </p>`;
+                this.userSide.appendChild(this.questionFlagDiv);
+            } else {
+                // Unflag the question
+                this.flagQuestionArr = this.flagQuestionArr.filter(idx => idx !== questionIndex);
+                this.userSide.removeChild(this.questionFlagDiv);
+            }
+
+            console.log("Flagged Questions:", this.flagQuestionArr); // Debugging
+        });
     }
 
     checkCorrectAnswer(question) {
