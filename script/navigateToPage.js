@@ -1,18 +1,23 @@
+const formLogin = document.getElementById("FormLogin");
+const formSigup = document.getElementById("FormSignup");
+const welcome = document.getElementById("welcome");
+
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("FormLogin").addEventListener("submit", function (event) {
+    formLogin.addEventListener("submit", function (event) {
         event.preventDefault();
         window.location.replace("welcomePage.html");
 
 
     });
-    document.getElementById("FormSignup").addEventListener("submit", function (event) {
+    formSigup.addEventListener("submit", function (event) {
         event.preventDefault();
         window.location.replace("welcomePage.html");
     });
 
 }
 );
-document.getElementById("welcome").addEventListener("click", function (event) {
+
+welcome.addEventListener("click", function (event) {
     event.preventDefault();
     window.location.replace("examPage.html");
 });
