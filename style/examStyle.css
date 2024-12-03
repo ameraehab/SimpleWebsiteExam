@@ -21,7 +21,10 @@ body{
     position: relative;
     top: 50px;
     left: 21%;
+        overflow: hidden;
+
 }
+
 .user{
     display: flex;
     flex-direction: column;
@@ -85,6 +88,8 @@ body{
     justify-content: center;
 
 }
+
+
 .answer-A button, .answer-B button, .answer-C button,.answer-D button{
     width: 300px;
     height: 55px;
@@ -101,7 +106,8 @@ body{
 
 
 }
-.answerBtn:hover{
+.answerBtn:hover , button.answerBtn.active {
+
     background-color: rgb(212, 212, 212);
    
 }
@@ -114,6 +120,7 @@ body{
     right: 23%;
     top:80px;
 }
+
 .btn-nxt-and-prev-container{
     display:flex;
     gap:420px ;   
