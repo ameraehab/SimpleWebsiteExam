@@ -7,8 +7,12 @@ class exam {
         this.index = 0;
         this.loading = 0;
         this.fetchData();
+        this.loadContainer = document.querySelector(".loading");
+        this.loadingStyle = document.createElement("div");
+        this.loadingStyle.innerHTML = `${this.loading}%`;
 
-
+        this.loadContainer.appendChild(this.loadingStyle);
+        this.currentQuestionAnswered = false;
 
     }
     async fetchData() {
@@ -36,6 +40,7 @@ class exam {
         const question = this.questionsData[this.index];
         this.examContant.innerHTML = "";
         const div = document.createElement("div");
+        this.currentQuestionAnswered = false;
 
         div.innerHTML = `
                 <div class="question"> 
@@ -49,15 +54,38 @@ class exam {
                     <div class="answer-D"> <button id="btn-ans-4" class="answerBtn">${question.options.D}</button>    </div>
                 </div> 
                 `;
+
         this.examContant.appendChild(div);
         const selectAnswerBnt = div.querySelectorAll(".answerBtn");
 
         selectAnswerBnt.forEach((button) => {
             button.addEventListener("click", (event) => {
+
                 selectAnswerBnt.forEach((btn) => btn.classList.remove('active'));
+
                 event.target.classList.add("active");
+                // Check if the question is already answered
+                if (this.currentQuestionAnswered) return;
+
+                // Mark this question as answered
+                this.currentQuestionAnswered = true;
+                this.loading = this.loading + 10;
+                this.loadingStyle.style.cssText = ` float: left;width:${this.loading}%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;`;
+                this.loadingStyle.innerHTML = `${this.loading}%`;
+
+                this.loadContainer.appendChild(this.loadingStyle);
+
+                if (this.loading > 100) {
+
+                    this.loading = 0;
+                    this.loadingStyle.innerHTML = `${this.loading}%`;
+                    this.loadingStyle.style.cssText = "none";
+
+                }
 
             });
+
+
         });
         if (this.index == 0) {
             this.prevBtn.style.display = "none";
@@ -71,6 +99,7 @@ class exam {
 
 
     }
+
 
     nextButton() {
 
@@ -169,61 +198,6 @@ let quizApp = new exam();
 
 // }
 
-
-
-// updateLoadingStyles() {
-//     this.loading = this.loading + 10;
-//     this.loadDiv.style.cssText = ` float: left;width:${this.loading};height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;`;
-//     this.loadDiv.innerHTML = `${this.loading} %`
-
-//     this.load.appendChild(this.loadDiv);
-
-//     if (this.loading >= 100) {
-//         this.loading = 0;
-//     }
-//     // if (this.loading == 10) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 10%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-//     // } else if (this.loading == 20) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 20%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-//     // } else if (this.loading == 30) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 30%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-
-//     // } else if (this.loading == 40) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 40%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-
-//     // } else if (this.loading == 50) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 50%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-
-//     // } else if (this.loading == 60) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 60%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-
-//     // } else if (this.loading == 70) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 70%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-
-//     // } else if (this.loading == 80) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 80%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-
-//     // } else if (this.loading == 90) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 90%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;";
-
-
-//     // } else if (this.loading == 100) {
-//     //     this.loadDiv.style.cssText = " float: left;width: 100%;height: 18px;background-color: rgb(222, 222, 222);border-radius: 25px;position: relative;";
-//     //     this.loading = 0;
-
-
-//     // }
-
-
-// }
 
 
 
