@@ -13,7 +13,7 @@ class exam {
 
         this.loadContainer.appendChild(this.loadingStyle);
         this.currentQuestionAnswered = false;
-
+        this.score = 0;
     }
     async fetchData() {
         try {
@@ -64,6 +64,9 @@ class exam {
                 selectAnswerBnt.forEach((btn) => btn.classList.remove('active'));
 
                 event.target.classList.add("active");
+                const questionAnswer = event.target.innerText;
+
+
                 // Check if the question is already answered
                 if (this.currentQuestionAnswered) return;
 
@@ -82,7 +85,11 @@ class exam {
                     this.loadingStyle.style.cssText = "none";
 
                 }
+                if (questionAnswer === question.correctAnswer) {
+                    this.totalResult++;
+                    console.log(this.totalResult);
 
+                }
             });
 
 
@@ -95,12 +102,7 @@ class exam {
 
         }
 
-
-
-
     }
-
-
     nextButton() {
 
         this.nextBtn.addEventListener("click", () => {
@@ -154,56 +156,6 @@ class exam {
 }
 
 let quizApp = new exam();
-
-
-
-
-
-
-
-
-// checkCorrectAnswer(question) {
-//     const btnA = document.getElementById("btn-ans-1");
-//     const btnB = document.getElementById("btn-ans-2");
-//     const btnC = document.getElementById("btn-ans-3");
-//     const btnD = document.getElementById("btn-ans-4");
-//     const a = Object.keys(question.options);
-
-//     btnA.addEventListener("click", () => {
-//         this.updateButtonStyles(btnA, [btnB, btnC, btnD]);
-//         this.handleAnswer(a[0], question.correctAnswer);
-
-//     });
-//     btnB.addEventListener("click", () => {
-//         this.updateButtonStyles(btnB, [btnA, btnC, btnD]);
-//         this.handleAnswer(a[1], question.correctAnswer);
-//         this.updateLoadingStyles();
-
-//     });
-//     btnC.addEventListener("click", () => {
-//         this.updateButtonStyles(btnC, [btnA, btnB, btnD]);
-//         this.handleAnswer(a[2], question.correctAnswer);
-
-//     });
-//     btnD.addEventListener("click", () => {
-//         this.updateButtonStyles(btnD, [btnA, btnB, btnC]);
-//         this.handleAnswer(a[3], question.correctAnswer);
-//     });
-//     this.updateLoadingStyles(this.index);
-
-
-
-
-
-
-// }
-
-
-
-
-
-
-
 
 // handleAnswer(selectedOption, correctAnswer) {
 
