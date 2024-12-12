@@ -10,9 +10,7 @@ class exam {
         this.loadContainer = document.querySelector(".loading");
         this.loadingStyle = document.createElement("div");
         this.loadingStyle.innerHTML = `${this.loading}%`;
-
         this.loadContainer.appendChild(this.loadingStyle);
-        this.currentQuestionAnswered = false;
         this.score = 0;
     }
     async fetchData() {
@@ -57,39 +55,44 @@ class exam {
 
         this.examContant.appendChild(div);
         const selectAnswerBnt = div.querySelectorAll(".answerBtn");
+        const savedAnswer = sessionStorage.getItem(`question-${this.index}`);
+        const savedAnswerBackground = sessionStorage.getItem(`question-${this.index}-color`);
+
+
 
         selectAnswerBnt.forEach((button) => {
+            if (button.innerHTML === savedAnswer && savedAnswerBackground) {
+                button.style.backgroundColor = savedAnswerBackground;
+            }
             button.addEventListener("click", (event) => {
+                selectAnswerBnt.forEach((btn) => {
+                    btn.style.backgroundColor = "";
+                });
 
-                selectAnswerBnt.forEach((btn) => btn.classList.remove('active'));
+                const backgroundColorBtn = " rgb(222, 222, 222)";
+                event.target.style.backgroundColor = backgroundColorBtn;
+                sessionStorage.setItem(`question-${this.index}`, event.target.innerText);
+                sessionStorage.setItem(`question-${this.index}-color`, backgroundColorBtn);
 
-                event.target.classList.add("active");
-                const questionAnswer = event.target.innerText;
 
+                if (!savedAnswer) {
 
-                // Check if the question is already answered
-                if (this.currentQuestionAnswered) return;
-
-                // Mark this question as answered
-                this.currentQuestionAnswered = true;
-                this.loading = this.loading + 10;
-                this.loadingStyle.style.cssText = ` float: left;width:${this.loading}%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;`;
-                this.loadingStyle.innerHTML = `${this.loading}%`;
-
-                this.loadContainer.appendChild(this.loadingStyle);
-
-                if (this.loading > 100) {
-
-                    this.loading = 0;
+                    this.loading = this.loading + 10;
+                    this.loadingStyle.style.cssText = ` float: left;width:${this.loading}%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;`;
                     this.loadingStyle.innerHTML = `${this.loading}%`;
-                    this.loadingStyle.style.cssText = "none";
 
-                }
-                if (questionAnswer === question.correctAnswer) {
-                    this.totalResult++;
-                    console.log(this.totalResult);
+                    this.loadContainer.appendChild(this.loadingStyle);
 
+                    if (this.loading > 100) {
+
+                        this.loading = 0;
+                        this.loadingStyle.innerHTML = `${this.loading}%`;
+                        this.loadingStyle.style.cssText = "none";
+
+                    }
                 }
+
+
             });
 
 
@@ -122,7 +125,6 @@ class exam {
                 this.prevBtn.style.cssText = 'display:block;';
 
             }
-            this.restoreButtonStyles();
 
         });
 
@@ -146,7 +148,6 @@ class exam {
                 this.prevBtn.style.cssText = 'display:none;';
 
             }
-            this.restoreButtonStyles();
 
         });
 
@@ -156,15 +157,3 @@ class exam {
 }
 
 let quizApp = new exam();
-
-// handleAnswer(selectedOption, correctAnswer) {
-
-
-//     if (selectedOption === correctAnswer) {
-//         console.log(`Correct answer: ${correctAnswer}`);
-//         this.totalAnswers++;
-//     } else {
-//         console.log(`Incorrect answer.`);
-//     }
-
-// }
