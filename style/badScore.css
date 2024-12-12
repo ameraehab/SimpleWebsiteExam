@@ -1,0 +1,38 @@
+body{
+    overflow: hidden;
+
+}
+.bad-Score-Image{
+    position: relative;
+    top: 200px;
+    left: 60%;
+    float: left;
+
+
+}
+.bad-Score-Image img{
+    width: 420px;
+    hight:400px;
+}
+.score{
+    position:relative;
+    top:300px;
+    right:100px;
+    
+}
+h1,h2 {
+    font-size:40px;
+    position:relative;
+        color: transparent;
+        background-clip: text; 
+        background-image: linear-gradient(
+          to right, 
+          gray,
+          red,
+          #db2777
+        );
+      }
+      h2{
+        left:100px;
+
+      }
