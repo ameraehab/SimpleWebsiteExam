@@ -20,6 +20,11 @@ body{
     right:100px;
     
 }
+.score-time-out{
+  position:relative;
+  top:300px;
+  right:100px;
+}
 h1,h2 {
     font-size:40px;
     position:relative;
@@ -35,4 +40,19 @@ h1,h2 {
       h2{
         left:100px;
 
+      }
+.total{
+  right:80px;
+
+}
+      .time-out-Image{
+        position: relative;
+        top: 140px;
+        left: 60%;
+        float: left;
+      }
+      .time-out-Image img{
+
+        width: 500px;
+        hight:400px;
       }
