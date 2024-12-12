@@ -184,3 +184,37 @@ body{
 
 
 
+@media (max-width: 768px) {
+    .exam-container {
+        width: 95%; /* Use most of the screen width */
+    }
+
+    .btn-nxt-and-prev-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Add vertical spacing */
+    }
+
+    .next-btn, 
+    .previous-btn {
+        width: 100%; /* Full width for buttons */
+        max-width: 300px; /* Limit the max width */
+    }
+}
+
+@media (max-width: 480px) {
+    .user {
+        width: 100%; /* Full width on very small screens */
+        padding: 10px;
+    }
+
+    .answers {
+        flex-direction: column; /* Stack answers vertically */
+    }
+
+    .answer-A button, 
+    .answer-B button, 
+    .answer-C button, 
+    .answer-D button {
+        max-width: 100%; /* Remove max width limit */
+    }
+}
