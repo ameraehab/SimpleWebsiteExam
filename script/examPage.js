@@ -6,12 +6,16 @@ class exam {
         this.prevBtn = document.querySelector(".previous-btn");
         this.index = 0;
         this.loading = 0;
-        this.fetchData();
         this.loadContainer = document.querySelector(".loading");
         this.loadingStyle = document.createElement("div");
-        this.loadingStyle.innerHTML = `${this.loading}%`;
+        this.loadingStyle.innerText = `${this.loading}%`;
         this.loadContainer.appendChild(this.loadingStyle);
         this.score = 0;
+        this.submit = document.getElementById("submit");
+        this.timerElement = document.querySelector(".timer");
+        this.timeRemaining = 0.5 * 60; // 5 minutes in seconds
+        this.fetchData();
+        this.startTimer(); // Start the timer
     }
     async fetchData() {
         try {
@@ -23,6 +27,7 @@ class exam {
             this.displayExamQuestions();
             this.nextButton();
             this.prevButton();
+
         } catch (err) {
             console.error(err.massage);
         }
@@ -34,6 +39,30 @@ class exam {
         }
         return array;
     }
+
+    startTimer() {
+        const updateTimer = () => {
+            const minutes = Math.floor(this.timeRemaining / 60);
+            const seconds = this.timeRemaining % 60;
+
+            // Update the timer display
+            this.timerElement.innerText = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+            localStorage.setItem("finalScore", this.score);
+
+            // Check if the timer has reached zero
+            if (this.timeRemaining <= 0) {
+                clearInterval(this.timerInterval);
+                window.location.replace("timeOutPage.html");
+            } else {
+                this.timeRemaining--;
+            }
+        };
+
+        // Call updateTimer every second
+        updateTimer(); // Update immediately so the timer shows 05:00 at start
+        this.timerInterval = setInterval(updateTimer, 1000);
+    }
+
     async displayExamQuestions() {
         const question = this.questionsData[this.index];
         this.examContant.innerHTML = "";
@@ -55,8 +84,8 @@ class exam {
 
         this.examContant.appendChild(div);
         const selectAnswerBnt = div.querySelectorAll(".answerBtn");
-        const savedAnswer = sessionStorage.getItem(`question-${this.index}`);
-        const savedAnswerBackground = sessionStorage.getItem(`question-${this.index}-color`);
+        const savedAnswer = localStorage.getItem(`question-${this.index}`);
+        const savedAnswerBackground = localStorage.getItem(`question-${this.index}-color`);
 
 
 
@@ -71,32 +100,42 @@ class exam {
 
                 const backgroundColorBtn = " rgb(222, 222, 222)";
                 event.target.style.backgroundColor = backgroundColorBtn;
-                sessionStorage.setItem(`question-${this.index}`, event.target.innerText);
-                sessionStorage.setItem(`question-${this.index}-color`, backgroundColorBtn);
+                localStorage.setItem(`question-${this.index}`, event.target.innerText);
+                localStorage.setItem(`question-${this.index}-color`, backgroundColorBtn);
+                this.calcResult(button.innerHTML, question.correctAnswer);
 
+                this.loading = this.loading + 10;
+                this.loadingStyle.style.cssText = ` float: left;width:${this.loading}%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;`;
+                this.loadingStyle.innerText = `${this.loading}%`;
 
-                if (!savedAnswer) {
+                this.loadContainer.appendChild(this.loadingStyle);
 
-                    this.loading = this.loading + 10;
-                    this.loadingStyle.style.cssText = ` float: left;width:${this.loading}%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;`;
-                    this.loadingStyle.innerHTML = `${this.loading}%`;
+                if (this.loading > 100) {
 
-                    this.loadContainer.appendChild(this.loadingStyle);
+                    this.loading = 0;
+                    this.loadingStyle.innerText = `${this.loading}%`;
+                    this.loadingStyle.style.cssText = "none";
 
-                    if (this.loading > 100) {
-
-                        this.loading = 0;
-                        this.loadingStyle.innerHTML = `${this.loading}%`;
-                        this.loadingStyle.style.cssText = "none";
-
-                    }
                 }
-
 
             });
 
+        });
+
+
+        this.submit.addEventListener("click", () => {
+            localStorage.setItem("finalScore", this.score);
+            if (this.score < 10) {
+                window.location.replace("badScorePage.html");
+
+            }
+            else if (this.score === 10) {
+                window.location.replace("fulMarkScore.html");
+            }
 
         });
+
+
         if (this.index == 0) {
             this.prevBtn.style.display = "none";
 
@@ -153,6 +192,14 @@ class exam {
 
     }
 
+
+    calcResult(choseenAnswer, correctAnswer) {
+        if (choseenAnswer == correctAnswer) {
+            this.score++;
+        }
+
+        return this.score;
+    }
 
 }
 
