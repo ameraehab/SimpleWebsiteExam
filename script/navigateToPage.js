@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.replace("welcomePage.html");
     });
 
+
+
+
 }
 );
 
