@@ -8,7 +8,7 @@
           "C": "Paris",
           "D": "Rome"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Paris"
       },
       {
         "question": "Which planet is known as the Red Planet?",
@@ -18,7 +18,7 @@
           "C": "Jupiter",
           "D": "Saturn"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "Mars"
       },
       {
         "question": "Who wrote 'To Kill a Mockingbird'?",
@@ -28,7 +28,7 @@
           "C": "J.K. Rowling",
           "D": "George Orwell"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "Harper Lee"
       },
       {
         "question": "What is the largest ocean on Earth?",
@@ -38,7 +38,7 @@
           "C": "Pacific Ocean",
           "D": "Arctic Ocean"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Pacific Ocean"
       },
       {
         "question": "Which element has the chemical symbol 'O'?",
@@ -48,7 +48,7 @@
           "C": "Silver",
           "D": "Iron"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "Oxygen"
       },
       {
         "question": "In which year did the Titanic sink?",
@@ -58,7 +58,7 @@
           "C": "1920",
           "D": "1935"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "1912"
       },
       {
         "question": "What is the hardest natural substance on Earth?",
@@ -68,7 +68,7 @@
           "C": "Diamond",
           "D": "Platinum"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Diamond"
       },
       {
         "question": "Who painted the Mona Lisa?",
@@ -78,7 +78,7 @@
           "C": "Pablo Picasso",
           "D": "Claude Monet"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "Leonardo da Vinci"
       },
       {
         "question": "Which gas do plants absorb from the atmosphere?",
@@ -88,7 +88,7 @@
           "C": "Nitrogen",
           "D": "Helium"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "Carbon Dioxide"
       },
       {
         "question": "What is the largest continent by land area?",
@@ -98,7 +98,7 @@
           "C": "Asia",
           "D": "Australia"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Asia"
       },
       {
         "question": "Who discovered penicillin?",
@@ -108,7 +108,7 @@
           "C": "Louis Pasteur",
           "D": "Isaac Newton"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "Alexander Fleming"
       },
       {
         "question": "Which country hosted the 2016 Summer Olympics?",
@@ -118,7 +118,7 @@
           "C": "Japan",
           "D": "Germany"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "Brazil"
       },
       {
         "question": "What is the currency of Japan?",
@@ -128,7 +128,7 @@
           "C": "Yen",
           "D": "Dollar"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Yen"
       },
       {
         "question": "How many bones are there in the human body?",
@@ -138,7 +138,7 @@
           "C": "212",
           "D": "205"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "206"
       },
       {
         "question": "Which of the following is a prime number?",
@@ -148,7 +148,7 @@
           "C": "7",
           "D": "10"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "7"
       },
       {
         "question": "Who was the first man to walk on the moon?",
@@ -158,7 +158,7 @@
           "C": "Michael Collins",
           "D": "Yuri Gagarin"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "Neil Armstrong"
       },
       {
         "question": "What is the chemical symbol for water?",
@@ -168,7 +168,7 @@
           "C": "H2O",
           "D": "NaCl"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "H2O"
       },
       {
         "question": "In which country can you visit the Great Pyramids of Giza?",
@@ -178,7 +178,7 @@
           "C": "Mexico",
           "D": "China"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "Egypt"
       },
       {
         "question": "Which instrument is used to measure temperature?",
@@ -188,7 +188,7 @@
           "C": "Hygrometer",
           "D": "Anemometer"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "Thermometer"
       },
       {
         "question": "Which ocean is located between Africa and Australia?",
@@ -198,7 +198,7 @@
           "C": "Indian Ocean",
           "D": "Arctic Ocean"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Indian Ocean"
       },
       {
         "question": "What is the smallest planet in our solar system?",
@@ -208,7 +208,7 @@
           "C": "Earth",
           "D": "Mars"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "Mercury"
       },
       {
         "question": "Which organ is responsible for pumping blood through the body?",
@@ -218,7 +218,7 @@
           "C": "Heart",
           "D": "Liver"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Heart"
       },
       {
         "question": "What is the tallest mountain in the world?",
@@ -228,7 +228,7 @@
           "C": "Mount Everest",
           "D": "Makalu"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Mount Everest"
       },
       {
         "question": "Who was the first President of the United States?",
@@ -238,7 +238,7 @@
           "C": "Thomas Jefferson",
           "D": "John Adams"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "George Washington"
       },
       {
         "question": "What is the chemical symbol for gold?",
@@ -248,7 +248,7 @@
           "C": "Fe",
           "D": "Pb"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "Au"
       },
       {
         "question": "Which desert is the largest in the world?",
@@ -258,7 +258,7 @@
           "C": "Arabian Desert",
           "D": "Kalahari Desert"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "Sahara Desert"
       },
       {
         "question": "Which language is the most spoken worldwide?",
@@ -268,7 +268,7 @@
           "C": "Mandarin Chinese",
           "D": "Hindi"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Mandarin Chinese"
       },
       {
         "question": "Which of the following animals is a mammal?",
@@ -278,7 +278,7 @@
           "C": "Crocodile",
           "D": "Turtle"
         },
-        "correctAnswer": "B"
+        "correctAnswer": "Dolphin"
       },
       {
         "question": "Which is the longest river in the world?",
@@ -288,7 +288,7 @@
           "C": "Yangtze",
           "D": "Mississippi"
         },
-        "correctAnswer": "A"
+        "correctAnswer": "Nile"
       },
       {
         "question": "Which country is known as the Land of the Rising Sun?",
@@ -298,7 +298,7 @@
           "C": "Japan",
           "D": "Vietnam"
         },
-        "correctAnswer": "C"
+        "correctAnswer": "Japan"
       }
     ]
   }
