@@ -41,8 +41,8 @@ h1,h2 {
         left:100px;
 
       }
-.total{
-  right:80px;
+#totalScore{
+  left:-50px;
 
 }
       .time-out-Image{
