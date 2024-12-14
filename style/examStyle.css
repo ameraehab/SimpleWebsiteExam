@@ -171,27 +171,6 @@ text-align:center;
 }
 
 
-/* .exam-container i {
-    color: black;
-    position: relative;
-    left: 300px;
-    top: 75px;
-
-}
-.exam-container i:hover{
-    color:red;
-} */
-/* #timer{
-    width:100px ;
-    height: 100px;
-    background-color: black;
-    color: white;
-    
-} */
-
-
-
-
 @media (max-width: 768px) {
     .exam-container {
         width: 95%; /* Use most of the screen width */
