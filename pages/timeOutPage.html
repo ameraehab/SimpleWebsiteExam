@@ -14,7 +14,22 @@
 		</div>
 		<div class="score-time-out">
 			<h1>TIME OUT</h1>
-			<h1 class="total">YOUR SCORE : 1/10</h1>
+			<h2 id="totalScore"></h2>
 		</div>
+		<script>
+			// Display the score on the page
+			document.addEventListener("DOMContentLoaded", () => {
+				const score = localStorage.getItem("finalScore");
+				const scoreDisplay = document.getElementById("totalScore");
+
+				if (score !== null) {
+					scoreDisplay.innerText = `Your Score : ${score} / 10`;
+				}
+
+				// Clear the score from localStorage
+				localStorage.removeItem("finalScore");
+			});
+		</script>
+		<script type="module" src="/script/examPage.js"></script>
 	</body>
 </html>
