@@ -13,9 +13,11 @@ class exam {
         this.score = 0;
         this.submit = document.getElementById("submit");
         this.timerElement = document.querySelector(".timer");
-        this.timeRemaining = 0.5 * 60; // 5 minutes in seconds
+        this.timeRemaining = 10 * 60; // 5 minutes in seconds
         this.fetchData();
         this.startTimer(); // Start the timer
+        this.flagedQuestionContainer = document.querySelector(".user");
+        this.flagedQuestion = document.querySelector(".flag");
     }
     async fetchData() {
         try {
@@ -62,7 +64,12 @@ class exam {
         updateTimer(); // Update immediately so the timer shows 05:00 at start
         this.timerInterval = setInterval(updateTimer, 1000);
     }
+    flagedQuestion() {
+        this.flagedQuestion.addEventListener("click", () => {
+            const questionFlaged = document.createElement("div");
 
+        });
+    }
     async displayExamQuestions() {
         const question = this.questionsData[this.index];
         this.examContant.innerHTML = "";
@@ -86,8 +93,7 @@ class exam {
         const selectAnswerBnt = div.querySelectorAll(".answerBtn");
         const savedAnswer = localStorage.getItem(`question-${this.index}`);
         const savedAnswerBackground = localStorage.getItem(`question-${this.index}-color`);
-
-
+        let questionAnswered = localStorage.getItem(`question-${this.index}-answered`) === "true";
 
         selectAnswerBnt.forEach((button) => {
             if (button.innerHTML === savedAnswer && savedAnswerBackground) {
@@ -102,21 +108,17 @@ class exam {
                 event.target.style.backgroundColor = backgroundColorBtn;
                 localStorage.setItem(`question-${this.index}`, event.target.innerText);
                 localStorage.setItem(`question-${this.index}-color`, backgroundColorBtn);
-                this.calcResult(button.innerHTML, question.correctAnswer);
+                // Only increment loading if the question is answered for the first time
+                if (!questionAnswered) {
+                    localStorage.setItem(`question-${this.index}-answered`, "true");
+                    questionAnswered = true; // Mark question as answered
 
-                this.loading = this.loading + 10;
-                this.loadingStyle.style.cssText = ` float: left;width:${this.loading}%;height: 18px;background-color:  rgb(222, 222, 222);border-radius: 25px;position: relative;`;
-                this.loadingStyle.innerText = `${this.loading}%`;
-
-                this.loadContainer.appendChild(this.loadingStyle);
-
-                if (this.loading > 100) {
-
-                    this.loading = 0;
-                    this.loadingStyle.innerText = `${this.loading}%`;
-                    this.loadingStyle.style.cssText = "none";
-
+                    // Increment loading bar
+                    this.loading += 10;
+                    this.updateLoadingBar();
                 }
+
+
 
             });
 
@@ -143,7 +145,9 @@ class exam {
             this.nextBtn.style.display = "none";
 
         }
-
+        localStorage.removeItem(`question-${this.index}`);
+        localStorage.removeItem(`question-${this.index}-color`);
+        localStorage.removeItem(`question-${this.index}-answered`) === "true";
     }
     nextButton() {
 
@@ -190,6 +194,25 @@ class exam {
 
         });
 
+    }
+    // Helper function to update the loading bar
+    updateLoadingBar() {
+        this.loadingStyle.style.cssText = `
+        float: left;
+        width: ${this.loading}%;
+        height: 18px;
+        background-color: rgb(222, 222, 222);
+        border-radius: 25px;
+        position: relative;
+    `;
+        this.loadingStyle.innerText = `${this.loading}%`;
+
+        this.loadContainer.appendChild(this.loadingStyle);
+
+        // Cap loading at 100%
+        if (this.loading > 100) {
+            this.loading = 100;
+        }
     }
 
 
