@@ -1,58 +1,128 @@
-body{
-    overflow: hidden;
-
+body {
+  overflow: hidden;
 }
-.bad-Score-Image{
-    position: relative;
-    top: 200px;
-    left: 60%;
-    float: left;
 
+.bad-Score-Image {
+  position: relative;
+  top: 200px;
+  left: 60%;
+  float: left;
+}
 
+.bad-Score-Image img {
+  width: 420px;
+  height: 400px; /* Corrected "hight" to "height" */
 }
-.bad-Score-Image img{
-    width: 420px;
-    hight:400px;
-}
-.score{
-    position:relative;
-    top:300px;
-    right:100px;
-    
-}
-.score-time-out{
-  position:relative;
-  top:300px;
-  right:100px;
-}
-h1,h2 {
-    font-size:40px;
-    position:relative;
-        color: transparent;
-        background-clip: text; 
-        background-image: linear-gradient(
-          to right, 
-          gray,
-          red,
-          #db2777
-        );
-      }
-      h2{
-        left:100px;
 
-      }
-#totalScore{
-  left:-50px;
-
+.score {
+  position: relative;
+  top: 300px;
+  right: 100px;
 }
-      .time-out-Image{
-        position: relative;
-        top: 140px;
-        left: 60%;
-        float: left;
-      }
-      .time-out-Image img{
 
-        width: 500px;
-        hight:400px;
-      }
+.score-time-out {
+  position: relative;
+  top: 300px;
+  right: 100px;
+}
+
+h1, h2 {
+  font-size: 40px;
+  position: relative;
+  color: transparent;
+  background-clip: text; 
+  background-image: linear-gradient(
+      to right, 
+      gray,
+      red,
+      #db2777
+  );
+}
+
+h2 {
+  left: 100px;
+}
+
+#totalScore {
+  left: -50px;
+}
+
+.time-out-Image {
+  position: relative;
+  top: 140px;
+  left: 60%;
+  float: left;
+}
+
+.time-out-Image img {
+  width: 500px;
+  height: 400px; /* Corrected "hight" to "height" */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .bad-Score-Image, .time-out-Image {
+      left: 50%;
+      top: 150px;
+      transform: translateX(-50%);
+      float: none;
+      width: 80%;
+  }
+
+  .bad-Score-Image img, .time-out-Image img {
+      width: 300px;
+      height: auto;
+  }
+
+  .score, .score-time-out {
+      top: 250px;
+      right: 50px;
+      text-align: center;
+  }
+
+  h1, h2 {
+      font-size: 30px;
+  }
+
+  h2 {
+      left: 0;
+  }
+
+  #totalScore {
+      left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bad-Score-Image, .time-out-Image {
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      float: none;
+      width: 90%;
+  }
+
+  .bad-Score-Image img, .time-out-Image img {
+      width: 250px;
+      height: auto;
+  }
+
+  .score, .score-time-out {
+      top: 200px;
+      right: 20px;
+      font-size: 16px;
+      text-align: center;
+  }
+
+  h1, h2 {
+      font-size: 24px;
+  }
+
+  h2 {
+      left: 0;
+  }
+
+  #totalScore {
+      left: 0;
+  }
+}
