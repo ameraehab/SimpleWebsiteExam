@@ -16,9 +16,20 @@ class exam {
         this.timeRemaining = 10 * 60; // 5 minutes in seconds
         this.fetchData();
         this.startTimer(); // Start the timer
-        this.flagedQuestionContainer = document.querySelector(".user");
-        this.flagedQuestion = document.querySelector(".flag");
+        this.flagBtn = document.querySelector(".flag");
+        this.userContainer = document.querySelector(".user");
+        this.questionsFlaged = [];
+        this.isFlaged = false;
+
+
+
     }
+    // addFlagQuestion() {
+
+
+    // }
+
+
     async fetchData() {
         try {
             const request = await fetch(`/questionsData.json`);
@@ -64,12 +75,7 @@ class exam {
         updateTimer(); // Update immediately so the timer shows 05:00 at start
         this.timerInterval = setInterval(updateTimer, 1000);
     }
-    flagedQuestion() {
-        this.flagedQuestion.addEventListener("click", () => {
-            const questionFlaged = document.createElement("div");
 
-        });
-    }
     async displayExamQuestions() {
         const question = this.questionsData[this.index];
         this.examContant.innerHTML = "";
@@ -94,7 +100,6 @@ class exam {
         const savedAnswer = localStorage.getItem(`question-${this.index}`);
         const savedAnswerBackground = localStorage.getItem(`question-${this.index}-color`);
         let questionAnswered = localStorage.getItem(`question-${this.index}-answered`) === "true";
-
         selectAnswerBnt.forEach((button) => {
             if (button.innerHTML === savedAnswer && savedAnswerBackground) {
                 button.style.backgroundColor = savedAnswerBackground;
@@ -137,7 +142,32 @@ class exam {
 
         });
 
+        this.flagBtn.addEventListener("click", () => {
+            const flagIndex = this.questionsFlaged.indexOf(this.index);
+            const existingFlag = Array.from(this.userContainer.children).find(
+                (child) => parseInt(child.dataset.index, 10) === this.index
+            );
+            const flagItem = document.createElement("div");
 
+            if (flagIndex === -1) {
+
+                this.questionsFlaged.push(this.index);
+                flagItem.className = "flaged";
+                flagItem.innerText = `Question ${this.index + 1}`;
+                flagItem.dataset.index = this.index;
+                this.userContainer.appendChild(flagItem);
+                flagItem.onclick = () => {
+                    this.index = parseInt(flagItem.dataset.index, 10);
+                    this.displayExamQuestions();
+                };
+            } else {
+                this.questionsFlaged.splice(flagIndex, 1);
+                if (existingFlag) {
+                    existingFlag.remove();
+                }
+            }
+
+        });
         if (this.index == 0) {
             this.prevBtn.style.display = "none";
 
@@ -149,6 +179,11 @@ class exam {
         localStorage.removeItem(`question-${this.index}-color`);
         localStorage.removeItem(`question-${this.index}-answered`) === "true";
     }
+
+
+
+
+
     nextButton() {
 
         this.nextBtn.addEventListener("click", () => {
