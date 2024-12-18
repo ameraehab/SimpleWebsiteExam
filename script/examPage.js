@@ -13,9 +13,9 @@ class exam {
         this.score = 0;
         this.submit = document.getElementById("submit");
         this.timerElement = document.querySelector(".timer");
-        this.timeRemaining = 10 * 60; // 5 minutes in seconds
+        this.timeRemaining = 30 * 60;
         this.fetchData();
-        this.startTimer(); // Start the timer
+        this.startTimer();
         this.flagBtn = document.querySelector(".flag");
         this.userContainer = document.querySelector(".user");
         this.questionsFlaged = [];
@@ -24,10 +24,6 @@ class exam {
 
 
     }
-    // addFlagQuestion() {
-
-
-    // }
 
 
     async fetchData() {
@@ -230,7 +226,6 @@ class exam {
         });
 
     }
-    // Helper function to update the loading bar
     updateLoadingBar() {
         this.loadingStyle.style.cssText = `
         float: left;
@@ -244,7 +239,6 @@ class exam {
 
         this.loadContainer.appendChild(this.loadingStyle);
 
-        // Cap loading at 100%
         if (this.loading > 100) {
             this.loading = 100;
         }
