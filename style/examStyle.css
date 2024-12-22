@@ -8,7 +8,6 @@ body{
     background: #858585;
     display: flex;
     justify-content: center;
-    flex-direction: row;
     
 }
 .loading{
@@ -324,20 +323,54 @@ text-align:center;
 
 @media (max-width: 440px) {
     .user{
-        width: 400px;
+        width: 200px;
         height:100px;
+padding-left:415px  ;
+left:200px;  
+display:flex;
+flex-direction:row;
+flex-wrap: wrap;
+    }
+    .exam-container{
+     
+      width:400px;
+      right:208px;
     
     }
-}
-/* .user{
-    display: flex;
-    flex-direction: column;
+   .question{
+    width: 380px;
+    left:26%;    
+  }
+  .btn-nxt-and-prev-container {
+    display:flex;
+    flex-direction: row;
+    gap: -1px;
     align-items: center;
-    position: relative;
-    background-color: black;
-    width: 400px;
-    height:737px;
-    left: 55%;
-    margin: 0px;
+}
+.next-btn {
+ 
+    right:145px;    
+ 
+     }
+  .previous-btn{
+   left:130px;
+   }
+   .answer-A button, .answer-B button, .answer-C button,.answer-D button{
+    width: 180px;
+   
+   } 
+   .flaged{
+    width: 150px;
+    height:30px;
+   
 
-} */
+
+}
+.user .timer{
+    width: 190px;
+   
+position:relative;
+right:250px;
+}
+
+}
