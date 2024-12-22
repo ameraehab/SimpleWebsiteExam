@@ -54,11 +54,9 @@ class exam {
             const minutes = Math.floor(this.timeRemaining / 60);
             const seconds = this.timeRemaining % 60;
 
-            // Update the timer display
             this.timerElement.innerText = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
             localStorage.setItem("finalScore", this.score);
 
-            // Check if the timer has reached zero
             if (this.timeRemaining <= 0) {
                 clearInterval(this.timerInterval);
                 window.location.replace("timeOutPage.html");
@@ -67,8 +65,7 @@ class exam {
             }
         };
 
-        // Call updateTimer every second
-        updateTimer(); // Update immediately so the timer shows 05:00 at start
+        updateTimer();
         this.timerInterval = setInterval(updateTimer, 1000);
     }
 
