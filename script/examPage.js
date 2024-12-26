@@ -102,11 +102,11 @@ class exam {
                     btn.style.backgroundColor = "";
                 });
 
-                const backgroundColorBtn = " rgb(222, 222, 222)";
+                const backgroundColorBtn = " rgb(148, 145, 145)";
                 event.target.style.backgroundColor = backgroundColorBtn;
                 localStorage.setItem(`question-${this.index}`, event.target.innerText);
                 localStorage.setItem(`question-${this.index}-color`, backgroundColorBtn);
-                // Only increment loading if the question is answered for the first time
+
                 if (!questionAnswered) {
                     localStorage.setItem(`question-${this.index}-answered`, "true");
                     questionAnswered = true; // Mark question as answered
